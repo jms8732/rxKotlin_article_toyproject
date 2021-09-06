@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    //언론사 url
+    <string name="joognang_base_url">https://rss.joins.com</string>
+    <string name="yonhap_base_url">http://www.yonhapnewstv.co.kr</string>
+
+</resources>
