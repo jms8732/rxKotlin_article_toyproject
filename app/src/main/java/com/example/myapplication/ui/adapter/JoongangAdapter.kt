@@ -7,8 +7,6 @@ import com.example.myapplication.ui.MainActivityViewModel
 import com.example.myapplication.ui.viewholder.BindingViewHolder
 
 class JoongangAdapter(private val vm : MainActivityViewModel) : BindingViewAdapter<ItemJoongangBinding>(){
-    var logoUrl : String? = null
-
     override fun getLayoutId(): Int = R.layout.item_joongang
 
     override fun onBindViewHolder(holder: BindingViewHolder<ItemJoongangBinding>, position: Int) {

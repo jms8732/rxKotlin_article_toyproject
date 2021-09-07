@@ -10,6 +10,7 @@ import com.example.myapplication.YONHAP
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.ui.fragment.JoongangFragment
 import com.example.myapplication.ui.fragment.YonhapFragment
+import com.google.android.material.tabs.TabLayoutMediator
 import com.orhanobut.logger.Logger
 import org.koin.android.ext.android.inject
 
@@ -17,6 +18,7 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
     override fun getLayoutId(): Int = R.layout.activity_main
     private val viewModel by inject<MainActivityViewModel>()
     private val fragmentList = arrayOfNulls<Fragment>(2)
+    private val nameList = arrayOf("중앙일보","연합뉴스")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +31,11 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
         binding.viewpager2.run {
             adapter = ViewPagerAdapter()
         }
+
+        TabLayoutMediator(binding.tabLayout,binding.viewpager2){ tab, pos ->
+            tab.text = nameList[pos]
+        }.attach()
+
     }
 
     private fun initObserver(){

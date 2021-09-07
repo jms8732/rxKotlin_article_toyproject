@@ -6,6 +6,7 @@ import com.example.myapplication.di.networkModule
 import com.example.myapplication.di.viewModules
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
+import org.koin.android.ext.android.get
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -16,8 +17,7 @@ class GlobalApplication : Application(){
         startKoin {
             androidContext(this@GlobalApplication)
             modules(viewModules)
-            modules(networkModule(getString(R.string.joognang_base_url)))
-            modules(networkModule(getString(R.string.yonhap_base_url)))
+            modules(networkModule)
             modules(apiModule)
         }
 
