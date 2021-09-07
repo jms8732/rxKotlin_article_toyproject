@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
 
+    <string name="joongang">중앙 일보</string>
+    <string name="yonhap">연합 뉴스</string>
+
     //언론사 url
     <string name="joongang_base_url">https://rss.joins.com/</string>
     <string name="yonhap_base_url">http://www.yonhapnewstv.co.kr</string>

@@ -3,10 +3,8 @@ package com.example.myapplication.ui
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.myapplication.BindingActivity
-import com.example.myapplication.JOOGNANG
-import com.example.myapplication.R
-import com.example.myapplication.YONHAP
+import androidx.viewpager2.widget.ViewPager2
+import com.example.myapplication.*
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.ui.fragment.JoongangFragment
 import com.example.myapplication.ui.fragment.YonhapFragment
@@ -28,14 +26,32 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
     }
 
     private fun initUI() {
-        binding.viewpager2.run {
-            adapter = ViewPagerAdapter()
+        binding.viewpager2.run{
+            adapter =  FragmentAdapter()
+            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+                override fun onPageScrolled(
+                    position: Int,
+                    positionOffset: Float,
+                    positionOffsetPixels: Int
+                ) {
+                    super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+                }
+
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    binding.bubbleNavigation.setCurrentActiveItem(position)
+                }
+
+                override fun onPageScrollStateChanged(state: Int) {
+                    super.onPageScrollStateChanged(state)
+                }
+            })
         }
 
-        TabLayoutMediator(binding.tabLayout,binding.viewpager2){ tab, pos ->
-            tab.text = nameList[pos]
-        }.attach()
 
+        binding.bubbleNavigation.setNavigationChangeListener { _, position ->
+            binding.viewpager2.setCurrentItem(position,true)
+        }
     }
 
     private fun initObserver(){
@@ -45,24 +61,23 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
         }
     }
 
-
-    inner class ViewPagerAdapter : FragmentStateAdapter(this) {
+    inner class FragmentAdapter : FragmentStateAdapter(this){
         override fun getItemCount(): Int = fragmentList.size
 
         override fun createFragment(position: Int): Fragment {
-            if (fragmentList[position] == null)
-                fragmentList[position] = createNewsFragment(position)
+            val fragment = fragmentList[position] ?: inflateFragment(position)
 
-            return fragmentList[position]!!
+            if(fragment == null)
+                fragmentList[position] = fragment
 
+            return fragment
         }
 
-        private fun createNewsFragment(pos: Int): Fragment {
-            return when (pos) {
-                0 -> JoongangFragment.newInstance(JOOGNANG)
-                else -> YonhapFragment.newInstance(YONHAP)
-            }
+        private fun inflateFragment(position : Int) : Fragment = when(position){
+            0 -> JoongangFragment.newInstance(JOONGANG)
+            else -> YonhapFragment.newInstance(YONHAP)
         }
     }
+
 }
 

@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-const val JOOGNANG = "joognang"
+const val JOONGANG = "joognang"
 const val YTN = "ytn"
 const val donga = "donga"
 const val YONHAP = "yonhap"

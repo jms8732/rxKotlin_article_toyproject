@@ -50,6 +50,8 @@ class YonhapFragment : BindingFragment<FragmentYonhapBinding>(), View.OnClickLis
             yonhapWorld.setOnClickListener(this@YonhapFragment)
             yonhapSocial.setOnClickListener(this@YonhapFragment)
         }
+
+        
     }
 
     @SuppressLint("CheckResult")
