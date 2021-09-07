@@ -49,9 +49,9 @@ class YonhapFragment : BindingFragment<FragmentYonhapBinding>(), View.OnClickLis
             yonhapWeather.setOnClickListener(this@YonhapFragment)
             yonhapWorld.setOnClickListener(this@YonhapFragment)
             yonhapSocial.setOnClickListener(this@YonhapFragment)
-        }
 
-        
+            yonhapRecent.performClick()
+        }
     }
 
     @SuppressLint("CheckResult")

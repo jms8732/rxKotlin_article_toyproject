@@ -27,6 +27,7 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
 
     private fun initUI() {
         binding.viewpager2.run{
+            isUserInputEnabled = false
             adapter =  FragmentAdapter()
             registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
                 override fun onPageScrolled(

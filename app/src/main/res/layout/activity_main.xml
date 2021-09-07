@@ -20,12 +20,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.gauravk.bubblenavigation.BubbleNavigationConstraintView
+        <com.gauravk.bubblenavigation.BubbleNavigationLinearView
             android:id="@+id/bubbleNavigation"
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:orientation="horizontal"
-            app:bnc_mode="spread"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,13 +33,13 @@
             <com.gauravk.bubblenavigation.BubbleToggleView
                 android:id="@+id/joongang"
                 android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 app:bt_active="true"
                 app:bt_colorActive="@color/orange_e0"
                 app:bt_colorInactive="@color/gray_9b"
                 app:bt_title="@string/joongang"
                 app:bt_icon="@drawable/ic_joongang_icon"
-                app:bt_badgeBackgroundColor="@color/orange_e0"
                 app:bt_titlePadding="3dp"
                 app:bt_titleSize="14dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -53,17 +52,19 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:bt_active="true"
+                android:layout_weight="1"
                 app:bt_colorActive="@color/blue_48"
                 app:bt_colorInactive="@color/gray_9b"
                 app:bt_title="@string/yonhap"
                 app:bt_titlePadding="3dp"
                 app:bt_titleSize="14dp"
+                app:bt_icon="@drawable/ic_yonhap_icon"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/joongang"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
-        </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
+        </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

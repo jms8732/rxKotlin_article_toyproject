@@ -47,7 +47,6 @@ class JoongangFragment : BindingFragment<FragmentJoongangBinding>(), View.OnClic
             joongangWorld.setOnClickListener(this@JoongangFragment)
             joongangSocial.setOnClickListener(this@JoongangFragment)
 
-            joongangMain.isChecked = true
             joongangMain.performClick()
         }
     }
