@@ -6,17 +6,16 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.*
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.example.myapplication.ui.fragment.EtnewsFragment
 import com.example.myapplication.ui.fragment.JoongangFragment
 import com.example.myapplication.ui.fragment.YonhapFragment
-import com.google.android.material.tabs.TabLayoutMediator
 import com.orhanobut.logger.Logger
 import org.koin.android.ext.android.inject
 
 class MainActivity : BindingActivity<ActivityMainBinding>() {
     override fun getLayoutId(): Int = R.layout.activity_main
     private val viewModel by inject<MainActivityViewModel>()
-    private val fragmentList = arrayOfNulls<Fragment>(2)
-    private val nameList = arrayOf("중앙일보","연합뉴스")
+    private val fragmentList = arrayOfNulls<Fragment>(3)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,7 +75,8 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
 
         private fun inflateFragment(position : Int) : Fragment = when(position){
             0 -> JoongangFragment.newInstance(JOONGANG)
-            else -> YonhapFragment.newInstance(YONHAP)
+            1-> YonhapFragment.newInstance(YONHAP)
+            else -> EtnewsFragment.newInstance(JTBC)
         }
     }
 

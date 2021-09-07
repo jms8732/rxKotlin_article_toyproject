@@ -3,10 +3,12 @@
 
     <string name="joongang">중앙 일보</string>
     <string name="yonhap">연합 뉴스</string>
+    <string name="etnews">전자 신문</string>
 
     //언론사 url
     <string name="joongang_base_url">https://rss.joins.com/</string>
     <string name="yonhap_base_url">http://www.yonhapnewstv.co.kr</string>
+    <string name="etnews_base_url">http://rss.etnews.com</string>
 
     //중앙 일보 rss
     <string name="joongang_main_news">주요 기사</string>
@@ -29,4 +31,13 @@
     <string name="yonhap_culture_news">문화ㆍ연예</string>
     <string name="yonhap_sport_news">스포츠</string>
     <string name="yonhap_weather_news">날씨</string>
+
+    //전자신문 rss
+    <string name="etnews_today_news">오늘의 뉴스</string>
+    <string name="etnews_flash_news">뉴스속보</string>
+    <string name="etnews_popular_news">오늘의 인기기사</string>
+    <string name="etnews_sw_news">SW</string>
+    <string name="etnews_economy_news">경제</string>
+    <string name="etnews_local_news">전국</string>
+    <string name="etnews_international_news">글로벌</string>
 </resources>

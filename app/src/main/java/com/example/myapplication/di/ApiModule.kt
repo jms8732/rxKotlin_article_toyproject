@@ -1,6 +1,7 @@
 package com.example.myapplication.di
 
 import com.example.myapplication.R
+import com.example.myapplication.network.api.EtnewsApi
 import com.example.myapplication.network.api.JoongangApi
 import com.example.myapplication.network.api.YonhapApi
 import org.koin.android.ext.koin.androidContext
@@ -14,5 +15,10 @@ val apiModule = module {
 
     single(createdAtStart = false){
         get<Retrofit.Builder>().baseUrl(androidContext().getString(R.string.yonhap_base_url)).build().create(YonhapApi::class.java)
+    }
+
+    single(createdAtStart = false){
+        get<Retrofit.Builder>().baseUrl(androidContext().getString(R.string.etnews_base_url)).build().create(
+            EtnewsApi::class.java)
     }
 }

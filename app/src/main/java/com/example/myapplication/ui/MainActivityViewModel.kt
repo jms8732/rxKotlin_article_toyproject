@@ -1,15 +1,12 @@
 package com.example.myapplication.ui
 
-import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.R
-import com.example.myapplication.model.Item
-import com.example.myapplication.model.Rss
-import com.example.myapplication.model.YonhapRss
+import com.example.myapplication.model.*
 import com.example.myapplication.network.api.JoongangApi
+import com.example.myapplication.network.api.EtnewsApi
 import com.example.myapplication.network.api.YonhapApi
-import com.example.myapplication.utils.withThread
 import com.orhanobut.logger.Logger
 import io.reactivex.Observable
 import org.koin.java.KoinJavaComponent.inject
@@ -18,6 +15,7 @@ import org.koin.java.KoinJavaComponent.inject
 class MainActivityViewModel : ViewModel() {
     private val joongangApi by inject<JoongangApi>(JoongangApi::class.java)
     private val yonhapApi by inject<YonhapApi>(YonhapApi::class.java)
+    private val etApi by inject<EtnewsApi>(EtnewsApi::class.java)
     val item = MutableLiveData<Item>()
 
     fun fetchJoongangNews(id : Int) : Observable<Rss>? = when(id){
@@ -42,6 +40,17 @@ class MainActivityViewModel : ViewModel() {
         R.id.yonhap_weather -> yonhapApi.fetchWeatherNews()
         R.id.yonhap_social -> yonhapApi.fetchSocietyNews()
         R.id.yonhap_world -> yonhapApi.fetchInternationalNews()
+        else -> null
+    }
+
+    fun fetchEtNews(id: Int) : Observable<EtnewsRss>? = when(id){
+        R.id.et_today -> etApi.fetchTodayNews()
+        R.id.et_international -> etApi.fetchInternationalNews()
+        R.id.et_sw -> etApi.fetchSwNews()
+        R.id.et_local -> etApi.fetchLocalNews()
+        R.id.et_economy -> etApi.fetchEconomyNews()
+        R.id.et_flash -> etApi.fetchFlashNews()
+        R.id.et_popular -> etApi.fetchPopularNews()
         else -> null
     }
 

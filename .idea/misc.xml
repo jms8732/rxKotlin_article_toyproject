@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_joongang_icon.xml" value="0.262037037037037" />
         <entry key="app/src/main/res/drawable/icon_joongang.xml" value="0.2657407407407407" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.37025641025641026" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.265" />
+        <entry key="app/src/main/res/layout/fragment_donga.xml" value="0.36717827626918537" />
         <entry key="app/src/main/res/layout/fragment_joongang.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/fragment_jtbc.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_yonhap.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_donga.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/item_et.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_joongang.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_jtbc.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.14907407407407408" />
       </map>
     </option>
