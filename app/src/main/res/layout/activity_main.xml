@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
 
     </data>
@@ -9,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/gray_d0"
         tools:context=".ui.MainActivity">
 
         <androidx.viewpager2.widget.ViewPager2
@@ -25,8 +27,10 @@
             android:id="@+id/bubbleNavigation"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:background="@color/white"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -34,13 +38,16 @@
             <com.gauravk.bubblenavigation.BubbleToggleView
                 android:id="@+id/joongang"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
                 app:bt_active="true"
                 app:bt_colorActive="@color/orange_e0"
-                app:bt_colorInactive="@color/gray_9b"
-                app:bt_title="@string/joongang"
+                app:bt_colorInactive="@color/orange_e0"
                 app:bt_icon="@drawable/ic_joongang_icon"
+                app:bt_shape="@drawable/shape_joongang"
+                app:bt_title="@string/joongang"
                 app:bt_titlePadding="8dp"
                 app:bt_titleSize="14dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -52,14 +59,19 @@
                 android:id="@+id/yonhap"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                app:bt_active="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="2dp"
                 android:layout_weight="1"
+                app:bt_active="true"
                 app:bt_colorActive="@color/blue_48"
-                app:bt_colorInactive="@color/gray_9b"
+                app:bt_colorInactive="@color/blue_48"
+                app:bt_icon="@drawable/ic_yonhap_icon"
+                app:bt_shape="@drawable/shape_yonhap"
                 app:bt_title="@string/yonhap"
                 app:bt_titlePadding="8dp"
                 app:bt_titleSize="14dp"
-                app:bt_icon="@drawable/ic_yonhap_icon"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/joongang"
                 app:layout_constraintTop_toTopOf="parent"
@@ -69,14 +81,18 @@
                 android:id="@+id/etnews"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                app:bt_active="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
                 android:layout_weight="1"
+                app:bt_active="true"
+
                 app:bt_colorActive="@color/red_c7"
-                app:bt_colorInactive="@color/gray_9b"
+                app:bt_colorInactive="@color/red_c7"
+                app:bt_icon="@drawable/ic_etnews_logo"
+                app:bt_shape="@drawable/shape_etnews"
                 app:bt_title="@string/etnews"
                 app:bt_titlePadding="8dp"
                 app:bt_titleSize="14dp"
-                app:bt_icon="@drawable/ic_etnews_logo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/joongang"
                 app:layout_constraintTop_toTopOf="parent"

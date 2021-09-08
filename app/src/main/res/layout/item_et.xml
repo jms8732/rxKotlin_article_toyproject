@@ -17,16 +17,12 @@
             type="java.lang.String" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:strokeWidth="1dp"
-        app:strokeColor="@color/gray_9b">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginBottom="8dp">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -100,5 +96,4 @@
                 tools:text="author" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
 </layout>
