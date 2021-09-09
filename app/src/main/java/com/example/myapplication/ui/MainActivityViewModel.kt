@@ -18,6 +18,9 @@ class MainActivityViewModel : ViewModel() {
     private val etApi by inject<EtnewsApi>(EtnewsApi::class.java)
     val item = MutableLiveData<Item>()
 
+    val logo = MutableLiveData<Int>()
+    val title = MutableLiveData<String>()
+
     fun fetchJoongangNews(id : Int) : Observable<Rss>? = when(id){
         R.id.joongang_main -> joongangApi.fetchMainNews()
         R.id.joongang_economy -> joongangApi.fetchEconomyNews()

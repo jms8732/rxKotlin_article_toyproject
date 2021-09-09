@@ -27,3 +27,10 @@ fun newsThumbnail(view : ImageView, src : String?){
             .into(view)
     }
 }
+
+@BindingAdapter(value = ["logo"])
+fun logo(view : ImageView , id : Int?){
+    id?.run{
+        view.setImageResource(id)
+    }
+}

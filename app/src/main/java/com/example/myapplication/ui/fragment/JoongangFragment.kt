@@ -50,7 +50,8 @@ class JoongangFragment : BindingFragment<FragmentJoongangBinding>(), View.OnClic
             joongangMain.performClick()
         }
 
-        binding.title.text = "중앙 일보"
+        vm.title.value = "중앙 일보"
+        vm.logo.value = R.drawable.ic_joongang_icon
     }
 
     @SuppressLint("CheckResult")

@@ -52,6 +52,7 @@ class YonhapFragment : BindingFragment<FragmentYonhapBinding>(), View.OnClickLis
 
             yonhapRecent.performClick()
         }
+
     }
 
     @SuppressLint("CheckResult")
