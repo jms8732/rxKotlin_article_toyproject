@@ -38,10 +38,23 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:scaleType="centerCrop"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/ic_feed_media_news_rss_social_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/white" />
+
                         <TextView
                             android:id="@+id/title"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
                             android:text="@string/etnews"
                             android:textColor="@color/white"
                             android:textSize="20dp"
@@ -49,7 +62,8 @@
                             app:layout_constrainedWidth="true"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/imageView2"
                             app:layout_constraintTop_toTopOf="parent"
                             tools:text="기사 제목" />
 
@@ -68,6 +82,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:scrollbars="none"
+                android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -86,6 +101,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/etnews_today_news" />
 
                     <com.google.android.material.chip.Chip
@@ -93,6 +112,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/etnews_flash_news" />
 
                     <com.google.android.material.chip.Chip
@@ -100,6 +123,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/etnews_popular_news" />
 
                     <com.google.android.material.chip.Chip
@@ -107,6 +134,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/etnews_sw_news" />
 
                     <com.google.android.material.chip.Chip
@@ -114,6 +145,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/etnews_economy_news" />
 
                     <com.google.android.material.chip.Chip
@@ -121,6 +156,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/etnews_local_news" />
 
                     <com.google.android.material.chip.Chip
@@ -128,6 +167,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/etnews_international_news" />
 
 

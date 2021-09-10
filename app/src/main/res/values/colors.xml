@@ -17,4 +17,8 @@
     <color name="red_ff">#FFDCDC</color>
     <color name="gray_d0">#d0cdd2</color>
     <color name="orange_fd">#FDF5E6</color>
+    <color name="black_6e">#606060</color>
+    <color name="black_c8">#f2f2f2</color>
+    <color name="gray_e1">#e1e1e1</color>
+    <color name="gray_e5">#e5e5e5</color>
 </resources>

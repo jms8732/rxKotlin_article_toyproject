@@ -17,6 +17,7 @@
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -24,6 +25,7 @@
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
                 app:layout_scrollFlags="scroll|enterAlways">
 
                 <androidx.appcompat.widget.Toolbar
@@ -37,10 +39,23 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:scaleType="centerCrop"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/ic_feed_media_news_rss_social_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/white" />
+
                         <TextView
                             android:id="@+id/title"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
                             android:text="@string/joongang"
                             android:textColor="@color/white"
                             android:textSize="20dp"
@@ -48,7 +63,8 @@
                             app:layout_constrainedWidth="true"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/imageView2"
                             app:layout_constraintTop_toTopOf="parent"
                             tools:text="기사 제목" />
 
@@ -86,10 +102,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipBackgroundColor="@drawable/chip_joongang_color_selector"
-                        app:chipStrokeColor="@color/gray_d0"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
                         app:chipStrokeWidth="1dp"
-                        android:textColor="@drawable/chip_joongang_textcolor"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/joongang_main_news" />
 
                     <com.google.android.material.chip.Chip
@@ -97,9 +113,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipBackgroundColor="@color/white"
-                        app:chipStrokeColor="@color/gray_d0"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
                         app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/joongang_economy_news" />
 
                     <com.google.android.material.chip.Chip
@@ -107,9 +124,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:chipBackgroundColor="@color/white"
-                        app:chipStrokeColor="@color/gray_d0"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
                         app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/joongang_culture_news" />
 
                     <com.google.android.material.chip.Chip
@@ -117,6 +135,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/joongang_world_news" />
 
                     <com.google.android.material.chip.Chip
@@ -124,6 +146,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/joongang_it_science_news" />
 
                     <com.google.android.material.chip.Chip
@@ -131,6 +157,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/joongang_politic_news" />
 
                     <com.google.android.material.chip.Chip
@@ -138,6 +168,10 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
                         android:text="@string/joongang_social_news" />
                 </com.google.android.material.chip.ChipGroup>
             </HorizontalScrollView>
