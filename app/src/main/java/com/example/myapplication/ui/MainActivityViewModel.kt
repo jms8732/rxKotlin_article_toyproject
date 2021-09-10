@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.model.*
+import com.example.myapplication.network.api.DongaApi
 import com.example.myapplication.network.api.JoongangApi
 import com.example.myapplication.network.api.EtnewsApi
 import com.example.myapplication.network.api.YonhapApi
@@ -16,6 +17,7 @@ class MainActivityViewModel : ViewModel() {
     private val joongangApi by inject<JoongangApi>(JoongangApi::class.java)
     private val yonhapApi by inject<YonhapApi>(YonhapApi::class.java)
     private val etApi by inject<EtnewsApi>(EtnewsApi::class.java)
+    private val dongaApi by inject<DongaApi>(DongaApi::class.java)
     val item = MutableLiveData<Item>()
 
     val logo = MutableLiveData<Int>()
@@ -54,6 +56,19 @@ class MainActivityViewModel : ViewModel() {
         R.id.et_economy -> etApi.fetchEconomyNews()
         R.id.et_flash -> etApi.fetchFlashNews()
         R.id.et_popular -> etApi.fetchPopularNews()
+        else -> null
+    }
+
+    fun fetchDongaNews(id : Int) : Observable<DongaRss>? = when(id){
+        R.id.donga_national -> dongaApi.fetchNationalNews()
+        R.id.donga_culture -> dongaApi.fetchCultureNews()
+        R.id.donga_science -> dongaApi.fetchScienceNews()
+        R.id.donga_economy -> dongaApi.fetchEconomyNews()
+        R.id.donga_international -> dongaApi.fetchInternationalNews()
+        R.id.donga_sport -> dongaApi.fetchSportNews()
+        R.id.donga_politic -> dongaApi.fetchPoliticsNews()
+        R.id.donga_total -> dongaApi.fetchTotalNews()
+        R.id.donga_editorial -> dongaApi.fetchEditorialsNews()
         else -> null
     }
 

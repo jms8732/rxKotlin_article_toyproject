@@ -106,6 +106,25 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/donga"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1"
+                app:bt_active="true"
+                app:bt_colorActive="@color/green_00"
+                app:bt_colorInactive="@color/green_00"
+                app:bt_icon="@drawable/ic_donga_logo"
+                app:bt_shape="@drawable/shape_donga"
+                app:bt_title="@string/donga"
+                app:bt_titlePadding="8dp"
+                app:bt_titleSize="14dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/joongang"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
         </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

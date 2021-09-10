@@ -14,8 +14,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic__78140_feed_media_news_rss_social_icon" />
-                            <entry key="sourceFile" value="$USER_HOME$/Downloads/678140_feed_media_news_rss_social_icon.svg" />
+                            <entry key="outputName" value="ic_donga_logo" />
+                            <entry key="sourceFile" value="$USER_HOME$/Downloads/donga_logo.svg" />
                           </map>
                         </option>
                       </PersistentState>

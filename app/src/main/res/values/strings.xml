@@ -4,11 +4,13 @@
     <string name="joongang">중앙 일보</string>
     <string name="yonhap">연합 뉴스</string>
     <string name="etnews">전자 신문</string>
+    <string name="donga">동아 일보</string>
 
     //언론사 url
     <string name="joongang_base_url">https://rss.joins.com/</string>
     <string name="yonhap_base_url">http://www.yonhapnewstv.co.kr</string>
     <string name="etnews_base_url">http://rss.etnews.com</string>
+    <string name="donga_base_url">https://rss.donga.com</string>
 
     //중앙 일보 rss
     <string name="joongang_main_news">주요 기사</string>
@@ -40,4 +42,15 @@
     <string name="etnews_economy_news">경제</string>
     <string name="etnews_local_news">전국</string>
     <string name="etnews_international_news">글로벌</string>
+
+    //동아 일보 rss
+    <string name="donga_total_news">전체기사</string>
+    <string name="donga_politic_news">정치</string>
+    <string name="donga_national_news">사회</string>
+    <string name="donga_economy_news">경제</string>
+    <string name="donga_international_news">국제</string>
+    <string name="donga_editorial_news">사설칼럼</string>
+    <string name="donga_science_news">의학과학</string>
+    <string name="donga_culture_news">문화연예</string>
+    <string name="donga_sports_news">스포츠</string>
 </resources>
