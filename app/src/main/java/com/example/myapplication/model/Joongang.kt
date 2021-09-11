@@ -40,7 +40,7 @@ data class Image(
 data class Item(
     @PropertyElement val title : String?,
     @PropertyElement val link : String?,
-    @PropertyElement val description  : String?,
+    @PropertyElement var description  : String?,
     @PropertyElement val author : String?,
     @PropertyElement val pubDate : String?
 )

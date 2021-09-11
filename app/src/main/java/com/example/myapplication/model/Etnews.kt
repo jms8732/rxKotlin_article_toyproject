@@ -40,7 +40,7 @@ data class EtnewsImage(
 data class EtnewsItem(
     @PropertyElement val title : String?,
     @PropertyElement val link : String?,
-    @PropertyElement val description : String?,
+    @PropertyElement var description : String?,
     @PropertyElement val pubDate : String?,
     @PropertyElement val author : String?,
     @PropertyElement val guid : String?,

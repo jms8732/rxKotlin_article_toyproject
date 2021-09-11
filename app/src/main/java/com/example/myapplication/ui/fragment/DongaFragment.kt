@@ -18,10 +18,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.kotlin.toObservable
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class DongaFragment : BindingFragment<FragmentDongaBinding> (), View.OnClickListener{
+class DongaFragment : BindingFragment<FragmentDongaBinding>(), View.OnClickListener {
     override fun getLayout(): Int = R.layout.fragment_donga
 
-    private lateinit var dongaAdapter : DongaAdapter
+    private lateinit var dongaAdapter: DongaAdapter
     private val vm by sharedViewModel<MainActivityViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -31,8 +31,8 @@ class DongaFragment : BindingFragment<FragmentDongaBinding> (), View.OnClickList
 
     }
 
-    private fun initUI(){
-        binding.recyclerView.run{
+    private fun initUI() {
+        binding.recyclerView.run {
             layoutManager = LinearLayoutManager(requireContext())
 
             dongaAdapter = DongaAdapter(vm)
@@ -66,16 +66,18 @@ class DongaFragment : BindingFragment<FragmentDongaBinding> (), View.OnClickList
                 it.channel?.run {
                     item?.asSequence()
                         ?.map {
-                            it.description = it.description?.run{
+                            it.description = it.description?.run {
                                 val start = indexOf("<")
                                 val end = indexOf(">")
 
-                                Logger.e("start $start, end: $end")
-                                removeRange(start,end + 1)
+                                if (start != -1 && end != -1)
+                                    removeRange(start, end + 1)
+                                else
+                                    this
                             }
                         }?.toList()
 
-                    dongaAdapter.submitList(item){
+                    dongaAdapter.submitList(item) {
                         binding.lottieLoading.visibility = View.GONE
                     }
                 }

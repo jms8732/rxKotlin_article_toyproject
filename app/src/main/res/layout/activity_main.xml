@@ -34,7 +34,7 @@
 
         <com.gauravk.bubblenavigation.BubbleNavigationLinearView
             android:id="@+id/bubbleNavigation"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
             android:paddingStart="5dp"
             android:paddingEnd="5dp"
@@ -46,11 +46,10 @@
 
             <com.gauravk.bubblenavigation.BubbleToggleView
                 android:id="@+id/joongang"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:layout_weight="1"
                 app:bt_active="true"
                 app:bt_colorActive="@color/orange_e0"
                 app:bt_colorInactive="@color/orange_e0"
@@ -66,14 +65,12 @@
 
             <com.gauravk.bubblenavigation.BubbleToggleView
                 android:id="@+id/yonhap"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="2dp"
-                android:layout_weight="1"
-                app:bt_active="true"
                 app:bt_colorActive="@color/blue_48"
                 app:bt_colorInactive="@color/blue_48"
                 app:bt_icon="@drawable/ic_yonhap_icon"
@@ -88,12 +85,10 @@
 
             <com.gauravk.bubblenavigation.BubbleToggleView
                 android:id="@+id/etnews"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:layout_weight="1"
-                app:bt_active="true"
                 app:bt_colorActive="@color/red_c7"
                 app:bt_colorInactive="@color/red_c7"
                 app:bt_icon="@drawable/ic_etnews_logo"
@@ -108,12 +103,10 @@
 
             <com.gauravk.bubblenavigation.BubbleToggleView
                 android:id="@+id/donga"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:layout_weight="1"
-                app:bt_active="true"
                 app:bt_colorActive="@color/green_00"
                 app:bt_colorInactive="@color/green_00"
                 app:bt_icon="@drawable/ic_donga_logo"

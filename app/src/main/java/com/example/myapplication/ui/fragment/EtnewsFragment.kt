@@ -54,6 +54,18 @@ class EtnewsFragment : BindingFragment<FragmentEtBinding>(), View.OnClickListene
             .cast(EtnewsRss::class.java)
             .subscribe({
                 it.channel?.run {
+                    item?.asSequence()
+                        ?.map {
+                        it.description?.run {
+                            replace("&#39;", "'")
+                            replace("&#09;"," ")
+                            replace("&#10;"," ")
+                            replace("&#32;"," ")
+                            replace("&#33;","!")
+                            replace("&#34;","\"")
+                            replace("&#35;","#")
+                        }
+                    }
                     etnewsAdapter.submitList(item){
                         binding.lottieLoading.visibility = View.GONE
                     }
