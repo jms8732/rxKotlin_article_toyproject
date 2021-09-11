@@ -64,21 +64,8 @@ class JoongangFragment : BindingFragment<FragmentJoongangBinding>(), View.OnClic
                 it.channel?.run {
                     item?.asSequence()
                         ?.map {
-                            it.description?.run{
-                                replace("nbsp;"," ")
-                                replace("amp;","&")
-                                replace("quot;","\"")
-                                replace("apos","'")
-                                replace("lt;","<")
-                                replace("gt;",">")
-                                replace("&nbsp;"," ")
-                                replace("&amp;","&")
-                                replace("&quot;","\"")
-                                replace("&apos","'")
-                                replace("&lt;","<")
-                                replace("&gt;",">")
-                            }
-                        }
+                            it.description = refineString(it.description)
+                        }?.toList()
                     jAdapter.submitList(item) {
                         binding.lottieLoading.visibility = View.GONE
                     }

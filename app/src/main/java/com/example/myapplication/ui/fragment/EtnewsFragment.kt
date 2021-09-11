@@ -11,6 +11,7 @@ import com.example.myapplication.model.EtnewsRss
 import com.example.myapplication.ui.MainActivityViewModel
 import com.example.myapplication.ui.adapter.EtnewsAdapter
 import com.example.myapplication.utils.withThread
+import com.orhanobut.logger.Logger
 import io.reactivex.Observable
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -56,22 +57,15 @@ class EtnewsFragment : BindingFragment<FragmentEtBinding>(), View.OnClickListene
                 it.channel?.run {
                     item?.asSequence()
                         ?.map {
-                        it.description?.run {
-                            replace("&#39;", "'")
-                            replace("&#09;"," ")
-                            replace("&#10;"," ")
-                            replace("&#32;"," ")
-                            replace("&#33;","!")
-                            replace("&#34;","\"")
-                            replace("&#35;","#")
-                        }
-                    }
+                            it.description = refineString(it.description)
+                        }?.toList()
+
                     etnewsAdapter.submitList(item){
                         binding.lottieLoading.visibility = View.GONE
                     }
                 }
             }, {
-               it.printStackTrace()
+                it.printStackTrace()
             }, {
 
             })
@@ -88,12 +82,12 @@ class EtnewsFragment : BindingFragment<FragmentEtBinding>(), View.OnClickListene
         }
     }
 
-    companion object{
+    companion object {
 
         @JvmStatic
-        fun newInstance(type : String) = EtnewsFragment().apply{
-            val bundle = Bundle().apply{
-                putString(NEWS_TYPE,type)
+        fun newInstance(type: String) = EtnewsFragment().apply {
+            val bundle = Bundle().apply {
+                putString(NEWS_TYPE, type)
             }
             arguments = bundle
         }

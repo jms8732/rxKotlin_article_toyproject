@@ -66,15 +66,7 @@ class DongaFragment : BindingFragment<FragmentDongaBinding>(), View.OnClickListe
                 it.channel?.run {
                     item?.asSequence()
                         ?.map {
-                            it.description = it.description?.run {
-                                val start = indexOf("<")
-                                val end = indexOf(">")
-
-                                if (start != -1 && end != -1)
-                                    removeRange(start, end + 1)
-                                else
-                                    this
-                            }
+                            it.description = removeTag(it.description)
                         }?.toList()
 
                     dongaAdapter.submitList(item) {
