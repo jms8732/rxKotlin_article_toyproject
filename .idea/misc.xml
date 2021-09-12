@@ -15,6 +15,7 @@
         <entry key="app/src/main/res/drawable/shape_background.xml" value="0.3921875" />
         <entry key="app/src/main/res/drawable/shape_donga.xml" value="0.28425925925925927" />
         <entry key="app/src/main/res/drawable/shape_etnews.xml" value="0.22864583333333333" />
+        <entry key="app/src/main/res/drawable/shape_korea_herald.xml" value="0.27314814814814814" />
         <entry key="app/src/main/res/drawable/shape_yonhap.xml" value="0.22512820512820514" />
         <entry key="app/src/main/res/drawable/toolbar_background.xml" value="0.3861538461538462" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.265" />
@@ -22,11 +23,13 @@
         <entry key="app/src/main/res/layout/fragment_et.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_joongang.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_jtbc.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_korea_herald.xml" value="0.24148606811145512" />
         <entry key="app/src/main/res/layout/fragment_yonhap.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_donga.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/item_et.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_joongang.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_jtbc.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_korea_herald.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_yonhap.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.14907407407407408" />
       </map>

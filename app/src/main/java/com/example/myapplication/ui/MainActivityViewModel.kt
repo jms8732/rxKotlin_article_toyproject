@@ -4,10 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.R
 import com.example.myapplication.model.*
-import com.example.myapplication.network.api.DongaApi
-import com.example.myapplication.network.api.JoongangApi
-import com.example.myapplication.network.api.EtnewsApi
-import com.example.myapplication.network.api.YonhapApi
+import com.example.myapplication.network.api.*
 import com.orhanobut.logger.Logger
 import io.reactivex.Observable
 import org.koin.java.KoinJavaComponent.inject
@@ -18,6 +15,7 @@ class MainActivityViewModel : ViewModel() {
     private val yonhapApi by inject<YonhapApi>(YonhapApi::class.java)
     private val etApi by inject<EtnewsApi>(EtnewsApi::class.java)
     private val dongaApi by inject<DongaApi>(DongaApi::class.java)
+    private val heraldApi by inject<KoreaHeraldApi>(KoreaHeraldApi::class.java)
     val item = MutableLiveData<Item>()
 
     val logo = MutableLiveData<Int>()
@@ -69,6 +67,18 @@ class MainActivityViewModel : ViewModel() {
         R.id.donga_politic -> dongaApi.fetchPoliticsNews()
         R.id.donga_total -> dongaApi.fetchTotalNews()
         R.id.donga_editorial -> dongaApi.fetchEditorialsNews()
+        else -> null
+    }
+
+    fun fetchHeraldNews(id : Int) : Observable<KoreaHeraldRss>? = when(id){
+        R.id.korea_herald_all_stories -> heraldApi.fetchAllStoreisNews()
+        R.id.korea_herald_business -> heraldApi.fetchBusinessNews()
+        R.id.korea_herald_entertain -> heraldApi.fetchEntertainNews()
+        R.id.korea_herald_finance -> heraldApi.fetchFinanceNews()
+        R.id.korea_herald_life -> heraldApi.fetchLifeStyleNews()
+        R.id.korea_herald_national -> heraldApi.fetchNationalNews()
+        R.id.korea_herald_sports -> heraldApi.fetchSportsNews()
+        R.id.korea_herald_world -> heraldApi.fetchWorldNews()
         else -> null
     }
 

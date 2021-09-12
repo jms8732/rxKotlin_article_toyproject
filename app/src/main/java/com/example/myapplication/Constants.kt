@@ -5,6 +5,7 @@ const val YTN = "ytn"
 const val YONHAP = "yonhap"
 const val ETNEWS = "etnews"
 const val DONGA = "donga"
+const val HERALD = "herald"
 
 
 const val NEWS_TYPE = "news_type"

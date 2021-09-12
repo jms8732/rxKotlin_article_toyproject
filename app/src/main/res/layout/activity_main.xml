@@ -118,6 +118,20 @@
                 app:layout_constraintStart_toEndOf="@+id/joongang"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/herald"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                app:bt_colorActive="@color/blue_41"
+                app:bt_colorInactive="@color/blue_41"
+                app:bt_icon="@drawable/ic_herald_logo"
+                app:bt_shape="@drawable/shape_korea_herald"
+                app:bt_title="@string/herald"
+                app:bt_titlePadding="8dp"
+                app:bt_titleSize="14dp" />
         </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

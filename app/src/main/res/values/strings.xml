@@ -5,12 +5,14 @@
     <string name="yonhap">연합 뉴스</string>
     <string name="etnews">전자 신문</string>
     <string name="donga">동아 일보</string>
+    <string name="herald">The Korea Herald</string>
 
     //언론사 url
     <string name="joongang_base_url">https://rss.joins.com/</string>
     <string name="yonhap_base_url">http://www.yonhapnewstv.co.kr</string>
     <string name="etnews_base_url">http://rss.etnews.com</string>
     <string name="donga_base_url">https://rss.donga.com</string>
+    <string name="koread_herald_base_url">http://www.koreaherald.com</string>
 
     //중앙 일보 rss
     <string name="joongang_main_news">주요 기사</string>
@@ -53,4 +55,14 @@
     <string name="donga_science_news">의학과학</string>
     <string name="donga_culture_news">문화연예</string>
     <string name="donga_sports_news">스포츠</string>
+
+    //korea herald rss
+    <string name="korea_herald_all_stories_news">All Stories</string>
+    <string name="korea_herald_national_news">National</string>
+    <string name="korea_herald_business_news">Business</string>
+    <string name="korea_herald_finance_news">Finance</string>
+    <string name="korea_herald_life_news">Life and Style</string>
+    <string name="korea_herald_entertainment_news">Entertainment</string>
+    <string name="korea_herald_sports_news">Sports</string>
+    <string name="korea_herald_world_news">World</string>
 </resources>

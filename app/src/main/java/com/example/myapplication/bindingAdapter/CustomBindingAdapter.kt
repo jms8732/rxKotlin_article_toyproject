@@ -14,16 +14,13 @@ fun newsThumbnail(view : ImageView, src : String?){
     view.scaleType = ImageView.ScaleType.CENTER_CROP
     try{
         Glide.with(view.context)
-            .load(src)
-            .placeholder(
-                R.drawable.ic_launcher_foreground)
+            .load(R.drawable.ic_joongang_icon)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(view)
     }catch(e : Exception){
         Glide.with(view.context)
-            .load(src)
-            .placeholder(
-                R.drawable.ic_launcher_foreground)
+            .load(R.drawable.ic_joongang_icon)
+            .transition(DrawableTransitionOptions.withCrossFade())
             .into(view)
     }
 }
