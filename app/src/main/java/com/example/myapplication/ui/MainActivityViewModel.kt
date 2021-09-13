@@ -18,7 +18,7 @@ class MainActivityViewModel : ViewModel() {
     private val heraldApi by inject<KoreaHeraldApi>(KoreaHeraldApi::class.java)
     val item = MutableLiveData<Item>()
 
-    val logo = MutableLiveData<Int>()
+    val logo = MutableLiveData<String>()
     val title = MutableLiveData<String>()
 
     fun fetchJoongangNews(id : Int) : Observable<Rss>? = when(id){

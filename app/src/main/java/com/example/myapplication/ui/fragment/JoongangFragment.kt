@@ -10,11 +10,10 @@ import com.example.myapplication.databinding.FragmentJoongangBinding
 import com.example.myapplication.model.Rss
 import com.example.myapplication.ui.MainActivityViewModel
 import com.example.myapplication.ui.adapter.JoongangAdapter
+import com.example.myapplication.utils.refineString
 import com.example.myapplication.utils.withThread
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.kotlin.toObservable
-import io.reactivex.schedulers.Schedulers
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class JoongangFragment : BindingFragment<FragmentJoongangBinding>(), View.OnClickListener {
@@ -51,7 +50,6 @@ class JoongangFragment : BindingFragment<FragmentJoongangBinding>(), View.OnClic
         }
 
         vm.title.value = "중앙 일보"
-        vm.logo.value = R.drawable.ic_joongang_icon
     }
 
     @SuppressLint("CheckResult")
@@ -64,11 +62,12 @@ class JoongangFragment : BindingFragment<FragmentJoongangBinding>(), View.OnClic
                 it.channel?.run {
                     item?.asSequence()
                         ?.map {
-                            it.description = refineString(it.description)
+                            it.description = it.description?.refineString()
                         }?.toList()
                     jAdapter.submitList(item) {
                         binding.lottieLoading.visibility = View.GONE
                     }
+
                 }
             }, { it.printStackTrace() }, {
 

@@ -11,6 +11,7 @@ import com.example.myapplication.model.DongaRss
 import com.example.myapplication.model.YonhapRss
 import com.example.myapplication.ui.MainActivityViewModel
 import com.example.myapplication.ui.adapter.DongaAdapter
+import com.example.myapplication.utils.removeTag
 import com.example.myapplication.utils.withThread
 import com.orhanobut.logger.Logger
 import io.reactivex.Observable
@@ -66,7 +67,7 @@ class DongaFragment : BindingFragment<FragmentDongaBinding>(), View.OnClickListe
                 it.channel?.run {
                     item?.asSequence()
                         ?.map {
-                            it.description = removeTag(it.description)
+                            it.description = it.description?.removeTag()
                         }?.toList()
 
                     dongaAdapter.submitList(item) {

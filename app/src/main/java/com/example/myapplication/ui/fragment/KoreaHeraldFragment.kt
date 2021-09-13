@@ -14,6 +14,7 @@ import com.example.myapplication.model.KoreaHeraldRss
 import com.example.myapplication.ui.MainActivityViewModel
 import com.example.myapplication.ui.adapter.EtnewsAdapter
 import com.example.myapplication.ui.adapter.KoreaHeraldAdapter
+import com.example.myapplication.utils.refineString
 import com.example.myapplication.utils.withThread
 import com.orhanobut.logger.Logger
 import io.reactivex.Observable
@@ -62,7 +63,7 @@ class KoreaHeraldFragment : BindingFragment<FragmentKoreaHeraldBinding>(), View.
                 it.channel?.run {
                     item?.asSequence()
                         ?.map {
-                            it.description = refineString(it.description)
+                            it.description = it.description?.refineString()
                         }?.toList()
 
                     heraldAdapter.submitList(item){

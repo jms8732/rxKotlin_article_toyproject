@@ -10,6 +10,7 @@ import com.example.myapplication.databinding.FragmentEtBinding
 import com.example.myapplication.model.EtnewsRss
 import com.example.myapplication.ui.MainActivityViewModel
 import com.example.myapplication.ui.adapter.EtnewsAdapter
+import com.example.myapplication.utils.refineString
 import com.example.myapplication.utils.withThread
 import com.orhanobut.logger.Logger
 import io.reactivex.Observable
@@ -57,7 +58,7 @@ class EtnewsFragment : BindingFragment<FragmentEtBinding>(), View.OnClickListene
                 it.channel?.run {
                     item?.asSequence()
                         ?.map {
-                            it.description = refineString(it.description)
+                            it.description = it.description?.refineString()
                         }?.toList()
 
                     etnewsAdapter.submitList(item){
