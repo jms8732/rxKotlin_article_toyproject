@@ -48,6 +48,15 @@ class EtnewsFragment : BindingFragment<FragmentEtBinding>(), View.OnClickListene
         }
 
         loading = binding.lottieLoading
+        swipe = binding.swipeRefreshLayout
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            etnewsAdapter.submitList(null) {
+                vm.fetchEtNews(binding.chipGroup.checkedChipId)
+                    ?.withThread()
+                    ?.subscribe(observer)
+            }
+        }
     }
 
     @SuppressLint("CheckResult")
@@ -63,6 +72,9 @@ class EtnewsFragment : BindingFragment<FragmentEtBinding>(), View.OnClickListene
 
                     etnewsAdapter.submitList(item){
                         binding.lottieLoading.visibility = View.GONE
+
+                        if(binding.swipeRefreshLayout.isRefreshing)
+                            binding.swipeRefreshLayout.isRefreshing = false
                     }
                 }
             }, {

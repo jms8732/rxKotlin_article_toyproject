@@ -29,7 +29,6 @@ class DongaFragment : BindingFragment<FragmentDongaBinding>(), View.OnClickListe
         super.onViewCreated(view, savedInstanceState)
 
         initUI()
-
     }
 
     private fun initUI() {
@@ -41,6 +40,7 @@ class DongaFragment : BindingFragment<FragmentDongaBinding>(), View.OnClickListe
         }
 
         loading = binding.lottieLoading
+        swipe = binding.swipeRefreshLayout
 
         binding.run {
             dongaTotal.setOnClickListener(this@DongaFragment)
@@ -54,6 +54,14 @@ class DongaFragment : BindingFragment<FragmentDongaBinding>(), View.OnClickListe
             dongaSport.setOnClickListener(this@DongaFragment)
 
             dongaTotal.performClick()
+        }
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            dongaAdapter.submitList(null) {
+                vm.fetchDongaNews(binding.chipGroup.checkedChipId)
+                    ?.withThread()
+                    ?.subscribe(observer)
+            }
         }
 
     }
@@ -72,6 +80,9 @@ class DongaFragment : BindingFragment<FragmentDongaBinding>(), View.OnClickListe
 
                     dongaAdapter.submitList(item) {
                         binding.lottieLoading.visibility = View.GONE
+
+                        if(binding.swipeRefreshLayout.isRefreshing)
+                            binding.swipeRefreshLayout.isRefreshing = false
                     }
                 }
             }, {

@@ -53,6 +53,15 @@ class KoreaHeraldFragment : BindingFragment<FragmentKoreaHeraldBinding>(), View.
         }
 
         loading = binding.lottieLoading
+        swipe = binding.swipeRefreshLayout
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            heraldAdapter.submitList(null) {
+                vm.fetchHeraldNews(binding.chipGroup.checkedChipId)
+                    ?.withThread()
+                    ?.subscribe(observer)
+            }
+        }
     }
 
     @SuppressLint("CheckResult")
@@ -68,6 +77,9 @@ class KoreaHeraldFragment : BindingFragment<FragmentKoreaHeraldBinding>(), View.
 
                     heraldAdapter.submitList(item){
                         binding.lottieLoading.visibility = View.GONE
+
+                        if(binding.swipeRefreshLayout.isRefreshing)
+                            binding.swipeRefreshLayout.isRefreshing = false
                     }
                 }
             }, {

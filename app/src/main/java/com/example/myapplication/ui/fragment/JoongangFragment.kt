@@ -50,6 +50,15 @@ class JoongangFragment : BindingFragment<FragmentJoongangBinding>(), View.OnClic
         }
 
         vm.title.value = "중앙 일보"
+
+
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            jAdapter.submitList(null) {
+                vm.fetchJoongangNews(binding.chipGroup.checkedChipId)
+                    ?.withThread()
+                    ?.subscribe(observer)
+            }
+        }
     }
 
     @SuppressLint("CheckResult")
@@ -66,6 +75,9 @@ class JoongangFragment : BindingFragment<FragmentJoongangBinding>(), View.OnClic
                         }?.toList()
                     jAdapter.submitList(item) {
                         binding.lottieLoading.visibility = View.GONE
+
+                        if(binding.swipeRefreshLayout.isRefreshing)
+                            binding.swipeRefreshLayout.isRefreshing = false
                     }
 
                 }

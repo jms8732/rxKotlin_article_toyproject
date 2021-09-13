@@ -8,6 +8,7 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.load.engine.Resource
 import com.example.myapplication.R
@@ -23,6 +24,7 @@ abstract class BindingFragment<T : ViewDataBinding> : Fragment() {
     }
 
     var loading: LottieAnimationView? = null
+    var swipe : SwipeRefreshLayout? = null
 
     val observer = object : Observer<Any> {
         override fun onSubscribe(d: Disposable) {
@@ -43,6 +45,8 @@ abstract class BindingFragment<T : ViewDataBinding> : Fragment() {
                 playAnimation()
             }
             Logger.e(e.toString())
+
+            swipe?.isRefreshing = false
         }
 
         override fun onComplete() {

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="vm"
             type="com.example.myapplication.ui.MainActivityViewModel" />
@@ -82,8 +83,8 @@
                 android:id="@+id/horizontalScrollView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:scrollbars="none"
                 android:background="@color/white"
+                android:scrollbars="none"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -102,77 +103,77 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/donga_total_news"
+                        android:textColor="@drawable/selector_textcolor"
                         app:chipBackgroundColor="@drawable/selector_chip_bg"
                         app:chipStrokeColor="@color/gray_e1"
-                        app:chipStrokeWidth="1dp"
-                        android:textColor="@drawable/selector_textcolor"
-                        android:text="@string/donga_total_news" />
+                        app:chipStrokeWidth="1dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/donga_politic"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/donga_politic_news"
+                        android:textColor="@drawable/selector_textcolor"
                         app:chipBackgroundColor="@drawable/selector_chip_bg"
                         app:chipStrokeColor="@color/gray_e1"
-                        app:chipStrokeWidth="1dp"
-                        android:textColor="@drawable/selector_textcolor"
-                        android:text="@string/donga_politic_news" />
+                        app:chipStrokeWidth="1dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/donga_national"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/donga_national_news"
+                        android:textColor="@drawable/selector_textcolor"
                         app:chipBackgroundColor="@drawable/selector_chip_bg"
                         app:chipStrokeColor="@color/gray_e1"
-                        app:chipStrokeWidth="1dp"
-                        android:textColor="@drawable/selector_textcolor"
-                        android:text="@string/donga_national_news" />
+                        app:chipStrokeWidth="1dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/donga_economy"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/donga_economy_news"
+                        android:textColor="@drawable/selector_textcolor"
                         app:chipBackgroundColor="@drawable/selector_chip_bg"
                         app:chipStrokeColor="@color/gray_e1"
-                        app:chipStrokeWidth="1dp"
-                        android:textColor="@drawable/selector_textcolor"
-                        android:text="@string/donga_economy_news" />
+                        app:chipStrokeWidth="1dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/donga_international"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/donga_international_news"
+                        android:textColor="@drawable/selector_textcolor"
                         app:chipBackgroundColor="@drawable/selector_chip_bg"
                         app:chipStrokeColor="@color/gray_e1"
-                        app:chipStrokeWidth="1dp"
-                        android:textColor="@drawable/selector_textcolor"
-                       android:text="@string/donga_international_news" />
+                        app:chipStrokeWidth="1dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/donga_editorial"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/donga_editorial_news"
+                        android:textColor="@drawable/selector_textcolor"
                         app:chipBackgroundColor="@drawable/selector_chip_bg"
                         app:chipStrokeColor="@color/gray_e1"
-                        app:chipStrokeWidth="1dp"
-                        android:textColor="@drawable/selector_textcolor"
-                        android:text="@string/donga_editorial_news" />
+                        app:chipStrokeWidth="1dp" />
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/donga_science"
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/donga_science_news"
+                        android:textColor="@drawable/selector_textcolor"
                         app:chipBackgroundColor="@drawable/selector_chip_bg"
                         app:chipStrokeColor="@color/gray_e1"
-                        app:chipStrokeWidth="1dp"
-                        android:textColor="@drawable/selector_textcolor"
-                        android:text="@string/donga_science_news" />
+                        app:chipStrokeWidth="1dp" />
 
 
                     <com.google.android.material.chip.Chip
@@ -180,11 +181,11 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/donga_culture_news"
+                        android:textColor="@drawable/selector_textcolor"
                         app:chipBackgroundColor="@drawable/selector_chip_bg"
                         app:chipStrokeColor="@color/gray_e1"
-                        app:chipStrokeWidth="1dp"
-                        android:textColor="@drawable/selector_textcolor"
-                        android:text="@string/donga_culture_news" />
+                        app:chipStrokeWidth="1dp" />
 
 
                     <com.google.android.material.chip.Chip
@@ -192,24 +193,36 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/donga_sports_news"
+                        android:textColor="@drawable/selector_textcolor"
                         app:chipBackgroundColor="@drawable/selector_chip_bg"
                         app:chipStrokeColor="@color/gray_e1"
-                        app:chipStrokeWidth="1dp"
-                        android:textColor="@drawable/selector_textcolor"
-                        android:text="@string/donga_sports_news" />
+                        app:chipStrokeWidth="1dp" />
 
 
                 </com.google.android.material.chip.ChipGroup>
             </HorizontalScrollView>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view"
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh_layout"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/lottie_loading"

@@ -37,6 +37,7 @@ class YonhapFragment : BindingFragment<FragmentYonhapBinding>(), View.OnClickLis
         }
 
         loading = binding.lottieLoading
+        swipe = binding.swipeRefreshLayout
 
         binding.run {
             yonhapCulture.setOnClickListener(this@YonhapFragment)
@@ -53,6 +54,13 @@ class YonhapFragment : BindingFragment<FragmentYonhapBinding>(), View.OnClickLis
             yonhapRecent.performClick()
         }
 
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            yAdapter.submitList(null) {
+                vm.fetchYonhapNews(binding.chipGroup.checkedChipId)
+                    ?.withThread()
+                    ?.subscribe(observer)
+            }
+        }
     }
 
     @SuppressLint("CheckResult")
@@ -64,6 +72,9 @@ class YonhapFragment : BindingFragment<FragmentYonhapBinding>(), View.OnClickLis
                 it.channel?.run {
                     yAdapter.submitList(item) {
                         binding.lottieLoading.visibility = View.GONE
+
+                        if(binding.swipeRefreshLayout.isRefreshing)
+                            binding.swipeRefreshLayout.isRefreshing = false
                     }
                 }
             }, {
