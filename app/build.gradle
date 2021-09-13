@@ -96,4 +96,7 @@ dependencies {
 
     //smooth navibar
     implementation 'com.gauravk.bubblenavigation:bubblenavigation:1.0.7'
+
+    //swipe refresh layout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 }
