@@ -51,6 +51,8 @@ class JoongangFragment : BindingFragment<FragmentJoongangBinding>(), View.OnClic
 
         vm.title.value = "중앙 일보"
 
+        loading = binding.lottieLoading
+        swipe = binding.swipeRefreshLayout
 
         binding.swipeRefreshLayout.setOnRefreshListener {
             jAdapter.submitList(null) {

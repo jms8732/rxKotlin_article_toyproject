@@ -23,10 +23,10 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
     }
 
     private fun initUI() {
-        binding.viewpager2.run{
+        binding.viewpager2.run {
             isUserInputEnabled = false
-            adapter =  FragmentAdapter()
-            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+            adapter = FragmentAdapter()
+            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageScrolled(
                     position: Int,
                     positionOffset: Float,
@@ -48,32 +48,32 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
 
 
         binding.bubbleNavigation.setNavigationChangeListener { _, position ->
-            binding.viewpager2.setCurrentItem(position,true)
+            binding.viewpager2.setCurrentItem(position, true)
         }
-    }
 
-    private fun initObserver(){
-        viewModel.item.observe(this){
+    }
+    private fun initObserver() {
+        viewModel.item.observe(this) {
 
             Logger.e("Item : ${it.toString()}")
         }
     }
 
-    inner class FragmentAdapter : FragmentStateAdapter(this){
+    inner class FragmentAdapter : FragmentStateAdapter(this) {
         override fun getItemCount(): Int = fragmentList.size
 
         override fun createFragment(position: Int): Fragment {
             val fragment = fragmentList[position] ?: inflateFragment(position)
 
-            if(fragment == null)
+            if (fragment == null)
                 fragmentList[position] = fragment
 
             return fragment
         }
 
-        private fun inflateFragment(position : Int) : Fragment = when(position){
+        private fun inflateFragment(position: Int): Fragment = when (position) {
             0 -> JoongangFragment.newInstance(JOONGANG)
-            1-> YonhapFragment.newInstance(YONHAP)
+            1 -> YonhapFragment.newInstance(YONHAP)
             2 -> EtnewsFragment.newInstance(ETNEWS)
             3 -> DongaFragment.newInstance(DONGA)
             else -> KoreaHeraldFragment.newInstance(HERALD)

@@ -17,6 +17,7 @@ import com.orhanobut.logger.Logger
 import io.reactivex.Observer
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import retrofit2.HttpException
 
 abstract class BindingFragment<T : ViewDataBinding> : Fragment() {
     val disposable by lazy {
@@ -24,7 +25,7 @@ abstract class BindingFragment<T : ViewDataBinding> : Fragment() {
     }
 
     var loading: LottieAnimationView? = null
-    var swipe : SwipeRefreshLayout? = null
+    var swipe: SwipeRefreshLayout? = null
 
     val observer = object : Observer<Any> {
         override fun onSubscribe(d: Disposable) {
@@ -40,11 +41,17 @@ abstract class BindingFragment<T : ViewDataBinding> : Fragment() {
         }
 
         override fun onError(e: Throwable) {
-            loading?.run {
-                setAnimation("40444_paul_r_bear_fail.json")
-                playAnimation()
+            if (e is HttpException) {
+                loading?.run{
+                    setAnimation("8719_no_connection.json")
+                    playAnimation()
+                }
+            }else{
+                loading?.run {
+                    setAnimation("40444_paul_r_bear_fail.json")
+                    playAnimation()
+                }
             }
-            Logger.e(e.toString())
 
             swipe?.isRefreshing = false
         }
