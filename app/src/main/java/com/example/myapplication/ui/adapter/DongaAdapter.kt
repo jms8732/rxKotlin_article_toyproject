@@ -11,8 +11,11 @@ class DongaAdapter(private val vm : MainActivityViewModel): BindingViewAdapter<I
 
     override fun onBindViewHolder(holder: BindingViewHolder<ItemDongaBinding>, position: Int) {
         holder.apply{
-            binding.vm = vm
             binding.item = getItem(position) as DongaItem
+
+            this.itemView.setOnClickListener {
+                vm.onClick(getItem(position))
+            }
         }
     }
 }

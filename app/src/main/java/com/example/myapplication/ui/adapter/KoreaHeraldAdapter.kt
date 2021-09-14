@@ -13,8 +13,11 @@ class KoreaHeraldAdapter(private val vm : MainActivityViewModel) : BindingViewAd
 
     override fun onBindViewHolder(holder: BindingViewHolder<ItemKoreaHeraldBinding>, position: Int) {
         holder.apply{
-            binding.vm = vm
             binding.item = (getItem(position) as KoreaHeraldItem)
+
+            this.itemView.setOnClickListener {
+                vm.onClick(getItem(position))
+            }
         }
     }
 }

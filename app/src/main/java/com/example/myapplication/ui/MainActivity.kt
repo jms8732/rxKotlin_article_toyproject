@@ -1,22 +1,28 @@
 package com.example.myapplication.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.*
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.example.myapplication.model.*
 import com.example.myapplication.ui.fragment.*
 import com.orhanobut.logger.Logger
+import org.koin.android.compat.ViewModelCompat.getViewModel
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class MainActivity : BindingActivity<ActivityMainBinding>() {
     override fun getLayoutId(): Int = R.layout.activity_main
-    private val viewModel by inject<MainActivityViewModel>()
+    private lateinit var viewModel: MainActivityViewModel
     private val fragmentList = arrayOfNulls<Fragment>(5)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding.lifecycleOwner = this
+        viewModel = getViewModel()
 
         initUI()
         initObserver()
@@ -52,10 +58,21 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
         }
 
     }
+
     private fun initObserver() {
         viewModel.item.observe(this) {
-
             Logger.e("Item : ${it.toString()}")
+            Intent(this@MainActivity, WebViewActivity::class.java).run {
+                putExtra(URL, when(it){
+                    is Item -> it.link
+                    is DongaItem -> it.link
+                    is EtnewsItem -> it.link
+                    is KoreaHeraldItem -> it.link
+                    is YonhapItem -> it.link
+                    else -> null
+                })
+                startActivity(this)
+            }
         }
     }
 

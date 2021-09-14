@@ -3,6 +3,7 @@ package com.example.myapplication.ui.fragment
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.NEWS_TYPE
 import com.example.myapplication.R
@@ -12,6 +13,7 @@ import com.example.myapplication.ui.MainActivityViewModel
 import com.example.myapplication.ui.adapter.JoongangAdapter
 import com.example.myapplication.utils.refineString
 import com.example.myapplication.utils.withThread
+import com.orhanobut.logger.Logger
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -23,7 +25,8 @@ class JoongangFragment : BindingFragment<FragmentJoongangBinding>(), View.OnClic
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.lifecycleOwner = this
+        Logger.e("fragment viewmodel: ${vm.toString()}")
         initUI()
     }
 

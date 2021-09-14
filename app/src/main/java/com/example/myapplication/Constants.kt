@@ -8,4 +8,5 @@ const val DONGA = "donga"
 const val HERALD = "herald"
 
 
+const val URL = "url"
 const val NEWS_TYPE = "news_type"

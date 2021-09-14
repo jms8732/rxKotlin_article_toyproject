@@ -10,10 +10,6 @@
             type="com.example.myapplication.model.Item" />
 
         <variable
-            name="vm"
-            type="com.example.myapplication.ui.MainActivityViewModel" />
-
-        <variable
             name="logo"
             type="java.lang.String" />
     </data>
@@ -23,8 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:layout_marginBottom="8dp"
-        android:onClick="@{() -> vm.onClick(item)}">
+        android:layout_marginBottom="8dp">
 
         <ImageView
             android:id="@+id/imageView"

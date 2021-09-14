@@ -9,10 +9,6 @@
             type="com.example.myapplication.model.DongaItem" />
 
         <variable
-            name="vm"
-            type="com.example.myapplication.ui.MainActivityViewModel" />
-
-        <variable
             name="logo"
             type="java.lang.String" />
     </data>

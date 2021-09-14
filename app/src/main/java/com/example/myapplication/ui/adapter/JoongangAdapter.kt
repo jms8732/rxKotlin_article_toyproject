@@ -11,8 +11,11 @@ class JoongangAdapter(private val vm : MainActivityViewModel) : BindingViewAdapt
 
     override fun onBindViewHolder(holder: BindingViewHolder<ItemJoongangBinding>, position: Int) {
         holder.apply{
-            binding.vm = vm
             binding.item = getItem(position) as Item
+
+            this.itemView.setOnClickListener {
+                vm.onClick(getItem(position))
+            }
 
             binding.executePendingBindings()
         }

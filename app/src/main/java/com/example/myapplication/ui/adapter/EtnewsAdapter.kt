@@ -12,7 +12,10 @@ class EtnewsAdapter(private val vm : MainActivityViewModel) : BindingViewAdapter
     override fun onBindViewHolder(holder: BindingViewHolder<ItemEtBinding>, position: Int) {
         holder.apply{
             binding.item = getItem(position) as EtnewsItem
-            binding.vm = vm
+
+            this.itemView.setOnClickListener {
+                vm.onClick(getItem(position))
+            }
         }
     }
 }

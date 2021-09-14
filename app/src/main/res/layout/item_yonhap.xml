@@ -8,9 +8,6 @@
             name="item"
             type="com.example.myapplication.model.YonhapItem" />
 
-        <variable
-            name="vm"
-            type="com.example.myapplication.ui.MainActivityViewModel" />
 
         <variable
             name="logo"

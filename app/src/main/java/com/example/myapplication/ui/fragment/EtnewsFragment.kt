@@ -23,6 +23,7 @@ class EtnewsFragment : BindingFragment<FragmentEtBinding>(), View.OnClickListene
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.lifecycleOwner = this
 
         initUI()
     }

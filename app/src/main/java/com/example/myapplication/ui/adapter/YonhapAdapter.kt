@@ -11,8 +11,11 @@ class YonhapAdapter(private val vm : MainActivityViewModel) : BindingViewAdapter
 
     override fun onBindViewHolder(holder: BindingViewHolder<ItemYonhapBinding>, position: Int) {
         holder.apply{
-            binding.vm = vm
             binding.item = (getItem(position) as YonhapItem)
+
+            this.itemView.setOnClickListener {
+                vm.onClick(getItem(position))
+            }
         }
     }
 }

@@ -1,6 +1,8 @@
 package com.example.myapplication
 
 import android.app.Application
+import android.app.usage.NetworkStats
+import android.net.NetworkRequest
 import com.example.myapplication.di.apiModule
 import com.example.myapplication.di.networkModule
 import com.example.myapplication.di.viewModules

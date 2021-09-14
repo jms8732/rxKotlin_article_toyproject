@@ -16,7 +16,7 @@ class MainActivityViewModel : ViewModel() {
     private val etApi by inject<EtnewsApi>(EtnewsApi::class.java)
     private val dongaApi by inject<DongaApi>(DongaApi::class.java)
     private val heraldApi by inject<KoreaHeraldApi>(KoreaHeraldApi::class.java)
-    val item = MutableLiveData<Item>()
+    val item = MutableLiveData<Any>()
 
     val logo = MutableLiveData<String>()
     val title = MutableLiveData<String>()
@@ -82,9 +82,9 @@ class MainActivityViewModel : ViewModel() {
         else -> null
     }
 
-    fun onClick(item : Item){
+    fun onClick(item : Any){
         Logger.e("onClick: ${item.toString()}")
-        this.item.value = item
+        this.item.postValue(item)
     }
 
 }
