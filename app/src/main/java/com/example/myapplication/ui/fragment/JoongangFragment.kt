@@ -26,13 +26,13 @@ class JoongangFragment : BindingFragment<FragmentJoongangBinding>(), View.OnClic
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = this
-        Logger.e("fragment viewmodel: ${vm.toString()}")
         initUI()
     }
 
 
     @SuppressLint("CheckResult")
     private fun initUI() {
+        Logger.e("joonang initUI")
         binding.recyclerView.run {
             jAdapter = JoongangAdapter(vm)
             adapter = jAdapter
@@ -101,6 +101,11 @@ class JoongangFragment : BindingFragment<FragmentJoongangBinding>(), View.OnClic
                     ?.subscribe(observer)
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Logger.e("joongang destroy view")
     }
 
     companion object {

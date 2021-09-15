@@ -11,6 +11,7 @@ import com.example.myapplication.model.YonhapRss
 import com.example.myapplication.ui.MainActivityViewModel
 import com.example.myapplication.ui.adapter.YonhapAdapter
 import com.example.myapplication.utils.withThread
+import com.orhanobut.logger.Logger
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -30,6 +31,7 @@ class YonhapFragment : BindingFragment<FragmentYonhapBinding>(), View.OnClickLis
     }
 
     private fun initUI() {
+        Logger.e("yonhap initUI")
         binding.recyclerView.run {
             layoutManager = LinearLayoutManager(requireContext())
 

@@ -33,6 +33,7 @@ class KoreaHeraldFragment : BindingFragment<FragmentKoreaHeraldBinding>(), View.
     }
 
     private fun initUI() {
+        Logger.e("koreaherald initUI")
         binding.recyclerView.run {
             layoutManager = LinearLayoutManager(requireContext())
 
@@ -99,6 +100,11 @@ class KoreaHeraldFragment : BindingFragment<FragmentKoreaHeraldBinding>(), View.
                     ?.subscribe(observer)
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Logger.e("herald destroy view")
     }
 
     companion object {

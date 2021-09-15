@@ -84,7 +84,10 @@ abstract class BindingFragment<T : ViewDataBinding> : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        disposable.dispose()
+        //disposable.dispose()
+
+        _binding?.unbind()
+        _binding = null
     }
 
 }

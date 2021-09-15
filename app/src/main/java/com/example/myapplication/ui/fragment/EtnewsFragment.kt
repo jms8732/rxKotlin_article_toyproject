@@ -29,6 +29,7 @@ class EtnewsFragment : BindingFragment<FragmentEtBinding>(), View.OnClickListene
     }
 
     private fun initUI() {
+        Logger.e("etnews initui")
         binding.recyclerView.run {
             layoutManager = LinearLayoutManager(requireContext())
 
