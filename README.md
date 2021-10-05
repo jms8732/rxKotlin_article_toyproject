@@ -20,11 +20,12 @@
 * Memory : 2048M
 * Language : Kotlin
 
+<br>
 
 # 👍 Result
 <img src="https://user-images.githubusercontent.com/26684848/136032704-4d615ef9-4051-4da3-bcb0-16347ba02648.gif" width="30%" height="30%"/> | <img src="https://user-images.githubusercontent.com/26684848/136032840-55586ee7-e5f9-4c35-93f7-4c034ce1c741.gif" width="30%" height="30%"/> | <img src="https://user-images.githubusercontent.com/26684848/136037659-e5f0199b-ce36-41a2-afaf-52d51b0c67c3.gif" width="30%" height="30%"/>
 
-
+<br>
 
 # 💡 Reference
 * [Retrofit2](https://github.com/square/retrofit)
