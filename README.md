@@ -22,8 +22,7 @@
 
 
 # Result
-<img src="https://user-images.githubusercontent.com/26684848/136032704-4d615ef9-4051-4da3-bcb0-16347ba02648.gif" width="50%" height="50%"/> 
-<img src="https://user-images.githubusercontent.com/26684848/136032840-55586ee7-e5f9-4c35-93f7-4c034ce1c741.gif" width="50%" height="50%"/>
+<img src="https://user-images.githubusercontent.com/26684848/136032704-4d615ef9-4051-4da3-bcb0-16347ba02648.gif" width="40%" height="40%"/> | <img src="https://user-images.githubusercontent.com/26684848/136032840-55586ee7-e5f9-4c35-93f7-4c034ce1c741.gif" width="40%" height="40%"/>
 
 
 # Reference
