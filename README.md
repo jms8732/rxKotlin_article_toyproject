@@ -15,8 +15,8 @@
 
 # Environment
 * IDE : Android Studio Bumblebee | 2021.1.1 Canary 11
-* CPU : Intel Core i5-6200U @ 2.30GHz  
-* OS : Windows 10 Home 64 bit  
+* OS : macOS 11.5.2
+* Cores: 8
 * Memory : 2048M
 * Language : Kotlin
 
