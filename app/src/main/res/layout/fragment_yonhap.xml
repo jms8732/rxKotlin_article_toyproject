@@ -1,25 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <data>
 
+    <data>
+        <variable
+            name="vm"
+            type="com.example.myapplication.ui.MainActivityViewModel" />
     </data>
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            tools:itemCount="4"
-            tools:listitem="@layout/item_joongang"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/blue_48"
+                    app:contentInsetEnd="0dp"
+                    app:contentInsetStart="0dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="10dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_feed_media_news_rss_social_icon"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/white" />
+
+                        <TextView
+                            android:id="@+id/title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/yonhap"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            app:layout_constrainedWidth="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/imageView2"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="기사 제목" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/yonhap_recent"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
+                        android:text="@string/yonhap_recent_news" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/yonhap_headline"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
+                        android:text="@string/yonhap_headline_news" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/yonhap_politic"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
+                        android:text="@string/yonhap_politics_news" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/yonhap_economic"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
+                        android:text="@string/yonhap_economic_news" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/yonhap_social"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
+                        android:text="@string/yonhap_social_news" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/yonhap_local"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
+                        android:text="@string/yonhap_local_news" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/yonhap_world"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
+                        android:text="@string/yonhap_world_news" />
+
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/yonhap_culture"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
+                        android:text="@string/yonhap_culture_news" />
+
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/yonhap_sport"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
+                        android:text="@string/yonhap_sport_news" />
+
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/yonhap_weather"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:chipBackgroundColor="@drawable/selector_chip_bg"
+                        app:chipStrokeColor="@color/gray_e1"
+                        app:chipStrokeWidth="1dp"
+                        android:textColor="@drawable/selector_textcolor"
+                        android:text="@string/yonhap_weather_news" />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="8707_loading.json"
+                app:lottie_loop="true" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

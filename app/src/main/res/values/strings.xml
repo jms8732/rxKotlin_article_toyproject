@@ -1,8 +1,68 @@
 <resources>
     <string name="app_name">My Application</string>
 
-    //언론사 url
-    <string name="joognang_base_url">https://rss.joins.com</string>
-    <string name="yonhap_base_url">http://www.yonhapnewstv.co.kr</string>
+    <string name="joongang">중앙 일보</string>
+    <string name="yonhap">연합 뉴스</string>
+    <string name="etnews">전자 신문</string>
+    <string name="donga">동아 일보</string>
+    <string name="herald">The Korea Herald</string>
 
+    //언론사 url
+    <string name="joongang_base_url">https://rss.joins.com/</string>
+    <string name="yonhap_base_url">http://www.yonhapnewstv.co.kr</string>
+    <string name="etnews_base_url">http://rss.etnews.com</string>
+    <string name="donga_base_url">https://rss.donga.com</string>
+    <string name="koread_herald_base_url">http://www.koreaherald.com</string>
+
+    //중앙 일보 rss
+    <string name="joongang_main_news">주요 기사</string>
+    <string name="joongang_economy_news">경제</string>
+    <string name="joongang_social_news">사회</string>
+    <string name="joongang_politic_news">정치</string>
+    <string name="joongang_world_news">지구촌</string>
+    <string name="joongang_culture_news">문화</string>
+    <string name="joongang_it_science_news">IT 과학</string>
+    <string name="joongang_daily_news">중앙데일리</string>
+
+    //연합 뉴스 RSS
+    <string name="yonhap_recent_news">최신</string>
+    <string name="yonhap_headline_news">헤드라인</string>
+    <string name="yonhap_politics_news">정치</string>
+    <string name="yonhap_economic_news">경제</string>
+    <string name="yonhap_social_news">사회</string>
+    <string name="yonhap_local_news">지역</string>
+    <string name="yonhap_world_news">세계</string>
+    <string name="yonhap_culture_news">문화ㆍ연예</string>
+    <string name="yonhap_sport_news">스포츠</string>
+    <string name="yonhap_weather_news">날씨</string>
+
+    //전자신문 rss
+    <string name="etnews_today_news">오늘의 뉴스</string>
+    <string name="etnews_flash_news">뉴스속보</string>
+    <string name="etnews_popular_news">오늘의 인기기사</string>
+    <string name="etnews_sw_news">SW</string>
+    <string name="etnews_economy_news">경제</string>
+    <string name="etnews_local_news">전국</string>
+    <string name="etnews_international_news">글로벌</string>
+
+    //동아 일보 rss
+    <string name="donga_total_news">전체기사</string>
+    <string name="donga_politic_news">정치</string>
+    <string name="donga_national_news">사회</string>
+    <string name="donga_economy_news">경제</string>
+    <string name="donga_international_news">국제</string>
+    <string name="donga_editorial_news">사설칼럼</string>
+    <string name="donga_science_news">의학과학</string>
+    <string name="donga_culture_news">문화연예</string>
+    <string name="donga_sports_news">스포츠</string>
+
+    //korea herald rss
+    <string name="korea_herald_all_stories_news">All Stories</string>
+    <string name="korea_herald_national_news">National</string>
+    <string name="korea_herald_business_news">Business</string>
+    <string name="korea_herald_finance_news">Finance</string>
+    <string name="korea_herald_life_news">Life and Style</string>
+    <string name="korea_herald_entertainment_news">Entertainment</string>
+    <string name="korea_herald_sports_news">Sports</string>
+    <string name="korea_herald_world_news">World</string>
 </resources>

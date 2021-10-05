@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navi_joongang"
+        android:title="@string/joongang"/>
+
+    <item
+        android:id="@+id/navi_yonhap"
+        android:title="@string/yonhap"/>
+</menu>
