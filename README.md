@@ -1,5 +1,5 @@
-# 📰 RSS 기사 모음 앱
-[RSS 기사 모음 앱](https://velog.io/@jms8732/%EA%B8%B0%EC%82%AC-%EB%AA%A8%EC%9D%8C-%EC%95%B1-2021.-09.06-2021.09.-14)
+# 📰 [RSS 기사 모음 앱](https://velog.io/@jms8732/%EA%B8%B0%EC%82%AC-%EB%AA%A8%EC%9D%8C-%EC%95%B1-2021.-09.06-2021.09.-14)
+
 
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=plastic&logo=kotlin&logoColor=white)
 ![RxKotlin](https://img.shields.io/badge/RxKotlin-7F52FF?style=plastic&logo=Rxkotlin)
